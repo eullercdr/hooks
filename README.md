@@ -51,5 +51,23 @@ useEffect(() => {
   }
   }, [ ]);
 ```
+**useMemo()** - Indicado para realizar algum calculo, pegar uma função e retornar um valor, dentro do render do componente.  
 
+Exemplo
+```javascript
+const techSize=useMemo(( ) => tech.length, [tech]);
+```
+No exemplo acima a variavel techSize so será alterada, caso haja alteração na variavel tech.
 
+**useCallback** - Similar ao useMemo, porém retorna uma função.
+
+Exemplo
+
+```javascript
+ const handleAdd = useCallback(() => {
+    setTech([...tech, newTech]);
+    setNewTech('');
+  }, [newTech, tech]);
+  
+  
+```
