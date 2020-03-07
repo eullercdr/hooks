@@ -37,6 +37,19 @@ useEffect(() => {
 
   }, [ ]);
 ```
+Caso queiramos que algo aconteça quando o componente deixa de existir, basta retornar uma função dentro do hook useEffect();
 
+```javascript
+useEffect(() => {
+   const storageTech = localStorage.getItem('tech');
+	
+	if(storageTech){
+		setTech(JSON.parse(tech))
+	}
+  return () => {
+	  return "algo quando o componente deixar de existir";
+  }
+  }, [ ]);
+```
 
 
